@@ -1,0 +1,15 @@
+{
+    "name": "anthonybourdeau/anthony-bourdeau-cv",
+    "autoload": {
+        "psr-4": {
+            "Anthonybourdeau\\AnthonyBourdeauCv\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "anthonybourdeau",
+            "email": "tonyr2004@neuf.fr"
+        }
+    ],
+    "require": {}
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,34 +7,52 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <title>Anthony BOURDEAU CV</title>
+    <style>
+        html, body, .container-fluid, .row {
+            height: 100%;
+        }
+        .bg-dark-sidebar {
+            background-color: #000; /* Couleur noire pour la colonne de gauche */
+            color: #fff; /* Couleur du texte dans la colonne de gauche */
+        }
+        .nav-link {
+            color: #fff; /* Couleur du texte dans les liens du menu */
+            border-radius: 0.5em;
+            margin-bottom: 1em;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <!-- Côté gauche pour le menu -->
-            <div class="col-md-3 bg-light">
+            <div class="col-md-3 bg-dark-sidebar">
                 <h2>Menu</h2>
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">CV</a>
+                        <a class="nav-link btn-primary" href="#" onclick="showCV()">CV</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        <a class="nav-link btn-primary" href="#" onclick="showPortfolio()">PORTFOLIO</a>
                     </li>
                 </ul>
             </div>
-            <!-- Côté droit pour afficher le CV en PDF -->
-            <div class="col-md-9">
+            <!-- Côté droit pour afficher le contenu -->
+            <div id="content" class="col-md-9">
                 <h2>Mon CV</h2>
-                <embed src="Images/Cv_AnthonyBourdeau.pdf" type="application/pdf" width="100%" height="100%">
+                <embed id="cvEmbed" src="Images/Cv_AnthonyBourdeau.pdf" type="application/pdf" width="100%" height="100%">
             </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS (facultatif, pour les composants Bootstrap nécessitant JavaScript) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    
+    <script>
+        function showCV() {
+            document.getElementById("content").innerHTML = '<h2>Mon CV</h2><embed id="cvEmbed" src="Images/Cv_AnthonyBourdeau.pdf" type="application/pdf" width="100%" height="100%">';
+        }
+
+        function showPortfolio() {
+            document.getElementById("content").innerHTML = '<h2>Mon Portfolio</h2> <!-- Ajoutez ici le contenu de votre Portfolio -->';
+        }
+    </script>
 </body>
 </html>
